@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Barbie!</title>
+
+    <meta http-equiv="X-UA-Compatible" content="chrome=1, IE=9">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Phaser App">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=1" />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #eb4498 url("images/bg.jpg") no-repeat top center;
+        }
+
+        canvas {
+            margin-top: 50px;
+            background-color: #eb4498;
+            border: 2px solid white;
+            border-top: none;
+            position: relative !important;
+            z-index: 1;
+
+            -webkit-box-shadow: 0px 30px 30px 5px rgba(0, 0, 0, 0.35);
+            -moz-box-shadow: 0px 30px 30px 5px rgba(0, 0, 0, 0.35);
+            box-shadow: 0px 30px 30px 5px rgba(0, 0, 0, 0.35);
+        }
+
+        .header {
+            width: 100%;
+            background: url("images/nav_bg.jpg");
+            background-size: cover;
+            text-align: center;
+            height: 70px;
+            border-bottom: 2px solid white;
+        }
+
+        .logo {
+            width: 214px;
+            margin: 0px auto;
+            padding-top: 5px;
+        }
+
+        .bottom {
+            max-width: 800px;
+            margin: 20px auto;
+            color: #fff;
+            font-size: 12px;
+            font-family: Arial;
+            z-index: 2;
+            position: relative;
+        }
+
+        @font-face {
+            font-family: 'PFCatalogCondensed-BlackItalic';
+            src: url('fonts/PFCatalogCondensed-BlackItalic.eot');
+        }
+
+        @font-face {
+            font-family: 'PFCatalogCondensed-BlackItalic';
+            src: url('fonts/PFCatalogCondensed-BlackItalic.woff') format('woff'),
+            url('fonts/PFCatalogCondensed-BlackItalic.svg#PFCatalogCondensed-BlackItalic') format('svg');
+        }
+    </style>
+    <script src="libs/howler.min.js"></script>
+    <script src="libs/phaser.min.js"></script>
+
+    <script src="libs/font.js"></script>
+
+    <script src="js/barbiesInfo.js"></script>
+    <script src="js/bodyColorSelector.js"></script>
+    <script src="js/shapeSelector.js"></script>
+    <script src="js/eyeColorSelector.js"></script>
+    <script src="js/hairColorSelector.js"></script>
+
+    <script src="js/lastScreen.js"></script>
+    <script src="js/startScreen.js"></script>
+    <script src="js/mainScreen.js"></script>
+    <script src="js/main.js"></script>
+
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+            var game = new Phaser.Game(800, 600, Phaser.Canvas, 'gameContainer');
+
+            game.preserveDrawingBuffer = true;
+            game.state.add('Game', BasicGame.Game);
+            game.state.start('Game');
+        }
+    </script>
+</head>
+<body>
+
+<div id="gameContainer" tabindex='1' style="margin:auto; max-width:800px;"></div>
+
+</body>
+</html>
